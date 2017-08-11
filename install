@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#This script to install inservice nagios plugin
+#You can run this script with ./install
+#If you advanced user using nagios, you can easily setup without this installer
+
+echo "INSTALLING INSERVICE NAGIOS PLUGIN !!"
+echo "-------------------------------------------------------------"
+echo ""
+
+
+echo "Input your nagios directory [default /usr/local/nagios]"
+
+read lokasi
+libex=$lokasi"/main/libexec"
+#Check nagios location nagios.cfg, objects and libexec 
+[ -f $lokasi/main/etc/nagios.cfg ] || echo "No nagios installed in $lokasi. Installation Fail."
+[ -f $lokasi/main/etc/nagios.cfg ] || exit 1
+[ -d $lokasi/main/libexec ] || echo "Libexec not Found, nagios installation not correct. Installation Fail."
+[ -d $lokasi/main/libexec ] || exit 1
+[ -d $lokasi/main/etc/objects ] || echo "Objects not Found, Nagios installation not correct. Installation Fail."
+[ -d $lokasi/main/etc/objects ] || exit 1
+
+
+
+echo ""
+echo "Nagios directory "$lokasi
+
+echo "Copying Services..."
+cp ./inservices $libex/
+chown nagios:nagios $libex/inservices
+
+echo "Copying command..."
+
+cp    ./config/* $lokasi/main/etc/objects/
+chown nagios:nagios $lokasi/main/etc/objects/cominservices.cfg
+chown nagios:nagios $lokasi/main/etc/objects/servinservices.cfg
+
+
+
+echo ""
+echo "Install was succsessfully"
+echo ""
+echo ""
+
+echo "Please add this line at file "$lokasi/"main/etc/nagios.cfg"
+echo "------------------------------------------------"
+echo "cfg_file=/opt/nagios/main/etc/objects/cominservices.cfg"
+echo "cfg_file=/opt/nagios/main/etc/objects/servinservices.cfg"
+echo "After you edit nagios.cfg you must restart nagios"
+echo "#/etc/init.d/nagiosmain restart"
+echo "If nagios failed to start, check again 2lines you add at nagios.cfg "
+
+
