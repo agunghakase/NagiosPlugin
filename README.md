@@ -3,7 +3,9 @@ This application to monitoring who access nagios server or other client computer
 
 You can use this application to monitoring  ssh connection, ftp connection, postgres, mysql, etc who enter from remote computer. You can write IP address into whitelist if theres allowed user to access your server.
 
-#For Begginer
+
+
+#For Begginer Nagios User
 
 After you was successfuly install nagios, you can try install this application using 
 
@@ -12,6 +14,7 @@ After you was successfuly install nagios, you can try install this application u
 #[Input your nagios directory]
 
 After that insert newline in your $NAGIOSDIR/main/etc/objects/nagios.conf 
+
 
 Place 2 lines like the installation output says
 
@@ -22,16 +25,21 @@ cfg_file=/usr/local/nagios/main/etc/objects/cominservices.cfg
 cfg_file=/user/local/nagios/main/etc/objects/servinservices.cfg
 
 
+
+
 #For Nagios Advanced users
+
 
 This application should be copy to $NAGIOSROOT/libexec, change owner to your nagios group/owner.
 And you can add the nagios commands, and nagios service as like as  config/* file.
+
 
 USAGE:  ./inservices ssh              #For monitoring your ssh
 
 USAGE:  ./inservices ftp              #For monitoring your ftp
 
 USAGE:  ./inservices postgres         #For monitoring your postgres
+
 
 Output 1: WARNING.(10:58:13)# 1connection unknown (192.168.249.230)
 
