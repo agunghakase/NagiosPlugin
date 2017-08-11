@@ -1,0 +1,14 @@
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             INPUTSSH
+        check_command                   inSSH
+        }
+
+define service{
+       use                             local-service
+       host_name                       localhost
+       service_description             INPUTFTP
+       check_command                   inFTP
+}
+
