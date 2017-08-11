@@ -1,8 +1,23 @@
 # inservices
 This application to monitoring who access nagios server or other client computer from remote computer. So you can prevent your server from people attack or unknown user login into your server.
 
-This application should be copy to $NAGIOSROOT/libexec, change owner to your nagios group/owner
 You can use this application to monitoring  ssh connection, ftp connection, postgres, mysql, etc who enter from remote computer. You can write IP address into whitelist if theres allowed user to access your server.
+
+#For Begginer
+After you was successfuly install nagios, you can try install this application using 
+#./install
+#[Input your nagios directory]
+
+After that insert newline in your $NAGIOSDIR/main/etc/objects/nagios.conf 
+Place 2 lines like the installation output says
+[Case if your nagios on /usr/local/nagios/]
+cfg_file=/usr/local/nagios/main/etc/objects/cominservices.cfg
+cfg_file=/user/local/nagios/main/etc/objects/servinservices.cfg
+
+#For Nagios Advanced users
+
+This application should be copy to $NAGIOSROOT/libexec, change owner to your nagios group/owner.
+And you can add the nagios commands, and nagios service as like as  config/* file.
 
 USAGE:  ./inservices ssh              #For monitoring your ssh
 
