@@ -36,13 +36,6 @@ And you can add the nagios commands, and nagios service as like as  config/* fil
 
 USAGE:  ./inservices ssh              #For monitoring your ssh
 
-#
-# Donation
-
-If this project help you reduce time to develop, you can give me a cup of coffee.
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHYNFDY744RBL)
-
 USAGE:  ./inservices ftp              #For monitoring your ftp
 
 USAGE:  ./inservices postgres         #For monitoring your postgres
@@ -54,3 +47,10 @@ Output 2: SAFE.(10:58:13)# 2connection (192.168.249.224, 192.168.249.222)
 
 Every WARNING output will write inside inservices.log
 
+
+#
+# Donation
+
+If this project help you reduce time to develop, you can give me a cup of coffee.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHYNFDY744RBL)
